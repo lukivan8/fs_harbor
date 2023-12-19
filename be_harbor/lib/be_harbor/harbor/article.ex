@@ -5,15 +5,14 @@ defmodule BeHarbor.Harbor.Article do
   schema "articles" do
     field :name, :string
     field :text, :string
-    belongs_to :author, BeHarbor.Users.User
+    belongs_to :user, BeHarbor.Users.User
 
     timestamps(type: :utc_datetime)
   end
 
-  @doc false
   def changeset(article, attrs) do
     article
-    |> cast(attrs, [:name, :text, :author_id])
-    |> validate_required([:name, :text, :author_id])
+    |> cast(attrs, [:name, :text, :user_id])
+    |> validate_required([:name, :text, :user_id])
   end
 end

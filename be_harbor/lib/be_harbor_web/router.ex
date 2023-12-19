@@ -35,6 +35,7 @@ defmodule BeHarborWeb.Router do
 
   scope "/api", BeHarborWeb do
     pipe_through [:api, :api_protected]
-    resources("/articles", ArticleController)
+    resources "/articles", ArticleController
+    get "/articles/user/:user_id", ArticleController, :by_user
   end
 end

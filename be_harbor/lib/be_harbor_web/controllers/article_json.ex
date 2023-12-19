@@ -20,7 +20,7 @@ defmodule BeHarborWeb.ArticleJSON do
       id: article.id,
       name: article.name,
       text: article.text,
-      author_id: article.author_id
+      user_id: article.user_id
     }
   end
 end
