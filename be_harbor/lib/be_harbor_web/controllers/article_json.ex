@@ -19,7 +19,8 @@ defmodule BeHarborWeb.ArticleJSON do
     %{
       id: article.id,
       name: article.name,
-      text: article.text
+      text: article.text,
+      author_id: article.author_id
     }
   end
 end

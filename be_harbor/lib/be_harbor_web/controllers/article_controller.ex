@@ -12,7 +12,10 @@ defmodule BeHarborWeb.ArticleController do
   end
 
   def create(conn, %{"article" => article_params}) do
-    with {:ok, %Article{} = article} <- Harbor.create_article(article_params) do
+    with {_conn, user} <- BeHarborWeb.APIAuthPlug.fetch(conn, []),
+         article_params <- Map.put_new(article_params, "author_id", user.id),
+         article_params <- IO.inspect(article_params),
+         {:ok, %Article{} = article} <- Harbor.create_article(article_params) do
       conn
       |> put_status(:created)
       |> put_resp_header("location", ~p"/api/articles/#{article}")
