@@ -46,5 +46,6 @@ defmodule BeHarborWeb.Endpoint do
   plug Plug.Head
   plug Plug.Session, @session_options
   plug Pow.Plug.Session, otp_app: :be_harbor
+  plug CORSPlug
   plug BeHarborWeb.Router
 end

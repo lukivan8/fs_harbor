@@ -45,7 +45,8 @@ defmodule BeHarbor.MixProject do
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
       {:plug_cowboy, "~> 2.5"},
-      {:pow, "~> 1.0.34"}
+      {:pow, "~> 1.0.34"},
+      {:cors_plug, "~>3.0.3"}
     ]
   end
 
