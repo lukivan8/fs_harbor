@@ -12,7 +12,7 @@ defmodule BeHarborWeb.ArticleController do
     render(conn, :index, articles: articles)
   end
 
-  def create(conn, %{"article" => article_params}) do
+  def create(conn,  article_params) do
     with {_conn, user} <- BeHarborWeb.APIAuthPlug.fetch(conn, []),
          article_params <- Map.put_new(article_params, "user_id", user.id),
          article_params <- IO.inspect(article_params),

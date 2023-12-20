@@ -3,7 +3,7 @@ import Config
 # Configure your database
 config :be_harbor, BeHarbor.Repo,
   username: "postgres",
-  password: "Nm3uqaPE5B",
+  password: "postgres",
   hostname: "localhost",
   database: "be_harbor_dev",
   stacktrace: true,
